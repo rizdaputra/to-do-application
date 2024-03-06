@@ -2,6 +2,7 @@ import { useState } from "react"
 import { ToDoItem } from "@/app/types/ToDoItem"
 import "./DropdownFilter.css"
 import filters from "@/app/variables/filters"
+import { useOutsideClick } from "@/app/hooks/useOutsideClick"
 
 interface DropdownFilterProps {
     currentFilter: string,
@@ -11,12 +12,13 @@ interface DropdownFilterProps {
 
 const DropdownFilter = ({currentFilter, changeFilter, toDoItems}  : DropdownFilterProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const ref = useOutsideClick(() => onFilterClick(false))
 
-    const onFilterClick = () => {
-        setIsOpen(!isOpen);
+    const onFilterClick = (filterChange: boolean) => {
+        setIsOpen(filterChange);
     }
 
-    return <div className="dropdown-wrapper" onClick={() => onFilterClick()}>
+    return <div className="dropdown-wrapper" onClick={() => onFilterClick(!isOpen)} ref={ref}>
         <p>{currentFilter}</p>
         <svg width="8" height="5" viewBox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.50423 0.420898L3.99998 2.92515L1.49573 0.420898L0.670898 1.24573L3.99998 4.57482L7.32907 1.24573L6.50423 0.420898Z" fill="black"/>
