@@ -1,0 +1,21 @@
+.progress-card{
+    background-color: #576371;
+    padding: 19px;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 33px;
+}
+
+.progress-card-title{
+    font-size: 28px;
+    line-height: 32.81px;
+    font-weight: 500;
+}
+
+.progress-card-bar{
+    margin: 12.71px 0;
+}
+
+.progress-card-bar-done{
+    background-color: #60C6FF;
+}

@@ -1,0 +1,89 @@
+.checkbox-container {
+    position: relative;
+    padding-left: 32px;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: inherit;
+  border: 2px #526F92 solid;
+  border-radius: 6px;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  cursor: pointer;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #526F92;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 1.5px 1.5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.to-do-item-wrapper{
+  margin-bottom: 17px;
+  background-color: #fff;
+  border-radius: 999px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.three-dots{
+  padding: 5px 0px;
+  position: relative;
+}
+
+.three-dots:hover{
+  cursor: pointer;
+}
+
+.to-do-item-checked{
+  color: #A9A9A9;
+  text-decoration: line-through;
+}
+
+.popover-delete {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  padding: 16px 22px;
+  z-index: 999;
+  border-radius: 10px;
+  color: #E07C7C;
+  box-shadow: 0px 0px 8px 0px #0000001A;
+  font-size: 14px;
+}
